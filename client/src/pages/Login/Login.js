@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import './Login.css';
 import Axios from 'axios';
-import Home from "../Home/Home";
 
 import {useHistory} from 'react-router-dom';
 
@@ -22,7 +21,7 @@ function Login() {
           if(response.data.logedIn){
             localStorage.setItem("loggedIn", true);
             localStorage.setItem("username",response.data.username);
-            history.push("./Home");
+            history.push("/");
           } else{
                setErrorMessage(response.data.message);
           }
